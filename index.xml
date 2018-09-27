@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kolmoblocks: self-describing data encoding</title>
+    <link>https://kolmoblocks.github.io/</link>
+    <description>Recent content on Kolmoblocks: self-describing data encoding</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 02 Aug 2018 18:35:05 -0400</lastBuildDate>
+    
+	<atom:link href="https://kolmoblocks.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Summary</title>
+      <link>https://kolmoblocks.github.io/summary/</link>
+      <pubDate>Thu, 02 Aug 2018 18:35:05 -0400</pubDate>
+      
+      <guid>https://kolmoblocks.github.io/summary/</guid>
+      <description>a data block serialization format for content- addressable network protocols based on cryptohash naming scheme. Kolmoblocks can be thought of as scripts for a Turing-complete DSL that take other Merkle data blocks as an input and out- put the target data block. Its design assures block composability, deterministic reproducibility and eliminates the problem of serialization format versioning hell.</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://kolmoblocks.github.io/about/</link>
+      <pubDate>Thu, 19 Jul 2018 18:35:05 -0400</pubDate>
+      
+      <guid>https://kolmoblocks.github.io/about/</guid>
+      <description>In kolmoblocks, data chunks (or data blocks) are identified by their cryptographically strong hashes. For example, ”ABABABF”, an ASCII-serialized string, can be can identified by its SHA-256: CC6460622F8AFE1A4DC7A92E34D53709115B0E39CCC3F323A35FA5965DB006D6 (we will contactinate hashes in the examples to only the first 5 digits of its hex from here to keep it sane).
+Such a naming scheme provides you with the global address space of data, where data block&amp;rsquo;s id only depends on the data itself, not where it came from.</description>
+    </item>
+    
+    <item>
+      <title>whitepaper</title>
+      <link>https://kolmoblocks.github.io/documentation/whitepaper/</link>
+      <pubDate>Sun, 15 Jul 2018 18:02:42 -0400</pubDate>
+      
+      <guid>https://kolmoblocks.github.io/documentation/whitepaper/</guid>
+      <description>&lt;p&gt;Kolmogorov data blocks (or kolmoblocks) is a data block serialization format for content-
+addressable network protocols based on cryptohash naming scheme. Kolmoblocks can be thought
+of as scripts for a Turing-complete DSL that take other Merkle data blocks as an input and out-
+put the target data block. Its design assures block composability, deterministic reproducibility and
+eliminates the problem of serialization format versioning hell.
+&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

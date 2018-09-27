@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+	<meta name="generator" content="Hugo 0.50-DEV" />
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="description" content="HON Project">
+
+<title>
+
+
+    Kolmoblocks: self-describing data encoding
+
+</title>
+<link rel="canonical" href="https://kolmoblocks.github.io/">
+
+
+
+
+
+
+<script type="text/javascript" src="/js/jquery-3.3.1.min.js"></script>
+
+
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/nunito_sans.css">
+
+
+    <link rel="stylesheet" href="/css/light-style.css">
+
+
+
+
+
+
+<link rel="shortcut icon" href="/img/favicon.ico">
+
+
+
+
+
+
+  <link href="https://kolmoblocks.github.io/index.xml" rel="alternate" type="application/rss+xml" title="Kolmoblocks: self-describing data encoding" />
+
+
+</head>
+
+<body>
+        <div class="modal">
+            <div class="modal-background"></div>
+            <div class="modal-content">
+                <button class="modal-close"></button>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/9f27qwQvrBg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>    
+                </div>
+        </div>
+
+
+<div id="top">
+    <div class="container">
+                <hr>
+<nav class="nav nav-center">
+    <span id="nav-toggle" class="nav-toggle"  onclick="document.getElementById('nav-menu').classList.toggle('is-active');">
+      <span></span>
+      <span></span>
+      <span></span>
+    </span>
+    <div id="nav-menu" class="nav-left nav-menu">
+      <span class="nav-item">
+        <a href="/">Kolmoblocks</a>
+      </span>
+      <span class="nav-item">
+        <a href="/documentation">Documentation</a>
+      </span>
+      <span class="nav-item">
+        <a href="https://github.com/kolmoblocks">Github</a>
+      </span>
+    </div>
+</nav>
+<hr>
+
+    </div>
+
+
+<div class="hero is-dark">
+    <div class="hero-body">
+        <div class="container has-text-centered">
+            
+            <h1 class="title fade-in one">
+
+                 Kolmoblocks
+            </h1>
+            
+
+            
+            <h3 class="is-3 fade-in two">
+                enable a new kind of computer networks, 
+                networks that are <b>content-addressable</b>, 
+                feature <b>composable data</b>, 
+                and let you <b>distribute the code to read the data along with the data itself</b>.           </h3>
+            
+            <br>
+            
+            <div class=" fade-in three">
+                <a class="button is-primary is-inverted  is-dark" href="/documentation/whitepaper">
+    read the whitepaper
+</a>
+<a class="button is-primary is-inverted  is-dark" id="showModal">
+    watch an overview
+</a>
+
+            </div>
+            
+        </div>
+    </div>
+
+</div>
+
+
+<div class="section no-padding fade-in three">
+
+  
+      <div class="section" id="about">
+          <div class="container">
+            
+            <p>In kolmoblocks, data chunks (or data blocks) are identified by their cryptographically strong hashes. For example, ”ABABABF”, an ASCII-serialized string, can be can identified by its SHA-256: <strong>CC6460622F8AFE1A4DC7A92E34D53709115B0E39CCC3F323A35FA5965DB006D6</strong> (we will contactinate hashes in the examples to only the first 5 digits of its hex from here to keep it sane).</p>
+
+<p>Such a naming scheme provides you with the global address space of data, where data block&rsquo;s id only depends on the data itself, not where it came from.</p>
+
+<p>One can note that such a naming scheme was implemented in <a href="ipfs.io">IPFS</a> or <a href="https://git-scm.com/">git</a>.</p>
+
+<p>The key idea of kolmoblocks is to combine the hash-based naming scheme with the concept of sending data as programs that output that data.</p>
+
+<p>For example, lets say you want to send someone that example string from above, ”ABABABF”. You can send instead a program that outputs that string:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">render</span>():
+    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;ABABABF&#34;</span></code></pre></div>
+<p>The consumer would be able to to retrieve the requested block sent in such format by:</p>
+
+<ol>
+<li>running this block in an interpreter and saving the output into a file</li>
+<li>validate that the output is indeed the requested data block by checking its hash</li>
+</ol>
+
+<p>Sending data as the programs only marginally changes the total size of data sent, yet it provides unique capabilities. For example, this script outputs the same target block yet is smaller in size:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">render</span>():
+    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;AB&#34;</span><span style="color:#f92672">*</span><span style="color:#ae81ff">3</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;F&#34;</span></code></pre></div>
+<p>Now lets make it possible to reference and &ldquo;import&rdquo; other data blocks by their hash in such programs.</p>
+
+<p>Consider distributing a data block <strong>F3025:</strong>: ”ABABABF-FBABABA”. The following script takes the block <strong>CC646</strong> as a dependancy block and outputs the target block <strong>F3025:</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># kolmoblock</span>
+<span style="color:#75715e"># target block: F3025 #</span>
+<span style="color:#75715e"># dependancy blocks: CC646</span>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">render</span>():
+  <span style="color:#66d9ef">return</span> dep(<span style="color:#e6db74">&#39;CC646&#39;</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;-&#34;</span> <span style="color:#f92672">+</span> dep(<span style="color:#e6db74">&#39;CC646&#39;</span>)[::<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]</code></pre></div>
+<p>You could not just import raw data, but also &ldquo;code&rdquo; from the &ldquo;codeblocks&rdquo;, the ones that contain the algorithms/logic.</p>
+
+<p>Consider a codeblock that contains Huffman-encoding decoding function:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># codeblock 77650</span>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">f</span>(huffman_tree, encoded_string):
+  output <span style="color:#f92672">=</span> <span style="color:#960050;background-color:#1e0010">’’</span>
+  cur <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+  <span style="color:#66d9ef">while</span> (cur <span style="color:#f92672">&lt;</span> len(encoded_string)):
+    node <span style="color:#f92672">=</span> huffman_tree
+    <span style="color:#66d9ef">while</span> type(node) <span style="color:#f92672">is</span> list:
+      bit <span style="color:#f92672">=</span> encoded_string[cur]
+      cur <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+      node <span style="color:#f92672">=</span> node[<span style="color:#ae81ff">0</span>] <span style="color:#66d9ef">if</span> bit <span style="color:#66d9ef">else</span> node[<span style="color:#ae81ff">1</span>]
+    output <span style="color:#f92672">+=</span> node
+  <span style="color:#66d9ef">return</span> output</code></pre></div>
+<p>We can reference and &ldquo;import&rdquo; that function in our kolmoblock for the same &ldquo;ABABABF-FBABABA&rdquo; string encoded with the Huffman tree:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># kolmoblock</span>
+<span style="color:#75715e"># target block: F3025</span>
+<span style="color:#75715e"># dependancy blocks: 77650</span>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">render</span>():
+  huffman_decode <span style="color:#f92672">=</span> eval(dep(<span style="color:#960050;background-color:#1e0010">’</span><span style="color:#ae81ff">77650</span><span style="color:#960050;background-color:#1e0010">’</span>))
+  huffman_tree <span style="color:#f92672">=</span> [<span style="color:#960050;background-color:#1e0010">’</span>AB<span style="color:#960050;background-color:#1e0010">’</span>,
+          [<span style="color:#960050;background-color:#1e0010">’</span>BA<span style="color:#960050;background-color:#1e0010">’</span>,
+              [<span style="color:#960050;background-color:#1e0010">’</span>F<span style="color:#960050;background-color:#1e0010">’</span>, <span style="color:#960050;background-color:#1e0010">’</span><span style="color:#f92672">-</span><span style="color:#960050;background-color:#1e0010">’</span>]
+          ]
+      ]
+encoded <span style="color:#f92672">=</span> <span style="color:#ae81ff">0b000110111110101010</span>
+<span style="color:#66d9ef">return</span> huffman_decode(huffman_tree,encoded)</code></pre></div>
+<p>More details can be found in the <a href="/documentation">documentation section</a>.</p>
+
+          </div>
+      </div>
+  
+
+<div class="section" id="footer">
+    <div class="container has-text-centered">
+    </div>
+    <div class="container has-text-centered">
+    </div>
+</div>
+
+</div>
+<script>
+$('a[href^="#"]').click(function(e) {
+    e.preventDefault();
+    var target = this.hash;
+    $('html, body').animate({
+    scrollTop: $(target).offset().top
+    }, 500);
+    return false;
+})
+
+$("#showModal").click(function() {
+  $(".modal").addClass("is-active");  
+});
+
+$(".modal-close").click(function() {
+   $(".modal").removeClass("is-active");
+});
+</script>
+
+</body>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Documentations on Kolmoblocks: self-describing data encoding</title>
+    <link>https://kolmoblocks.github.io/documentation/</link>
+    <description>Recent content in Documentations on Kolmoblocks: self-describing data encoding</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 15 Jul 2018 18:02:42 -0400</lastBuildDate>
+    
+	<atom:link href="https://kolmoblocks.github.io/documentation/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>whitepaper</title>
+      <link>https://kolmoblocks.github.io/documentation/whitepaper/</link>
+      <pubDate>Sun, 15 Jul 2018 18:02:42 -0400</pubDate>
+      
+      <guid>https://kolmoblocks.github.io/documentation/whitepaper/</guid>
+      <description>&lt;p&gt;Kolmogorov data blocks (or kolmoblocks) is a data block serialization format for content-
+addressable network protocols based on cryptohash naming scheme. Kolmoblocks can be thought
+of as scripts for a Turing-complete DSL that take other Merkle data blocks as an input and out-
+put the target data block. Its design assures block composability, deterministic reproducibility and
+eliminates the problem of serialization format versioning hell.
+&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
