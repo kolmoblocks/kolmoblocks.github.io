@@ -31,6 +31,17 @@ Such a naming scheme provides you with the global address space of data, where d
     </item>
     
     <item>
+      <title>learning</title>
+      <link>https://kolmoblocks.github.io/documentation/learning_resources/</link>
+      <pubDate>Sun, 15 Jul 2018 18:02:42 -0400</pubDate>
+      
+      <guid>https://kolmoblocks.github.io/documentation/learning_resources/</guid>
+      <description>The list of (external) learning materials that people have found useful to learn more about the relevant technologies, to understand the kolmoblocks project, motivation and the context behind it, as well as its positioning within the industry.
+Feel free to propose additions by opening a PR with your changes. The Wikipedia definition pages and the official project&amp;rsquo;s websites might be ommitted as self-evident.
+Relevant information theory concepts  &amp;ldquo;Kolmogorov Complexity and Our Search for Meaning&amp;rdquo; by Noson S.</description>
+    </item>
+    
+    <item>
       <title>whitepaper</title>
       <link>https://kolmoblocks.github.io/documentation/whitepaper/</link>
       <pubDate>Sun, 15 Jul 2018 18:02:42 -0400</pubDate>
