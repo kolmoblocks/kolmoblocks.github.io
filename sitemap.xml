@@ -23,6 +23,10 @@
   </url>
   
   <url>
+    <loc>https://kolmoblocks.github.io/documentation/design/</loc>
+  </url>
+  
+  <url>
     <loc>https://kolmoblocks.github.io/categories/</loc>
     <priority>0</priority>
   </url>
