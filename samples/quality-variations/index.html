@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="description" content="HON Project">
+
+<title>
+
+
+     Quality Variations 
+
+</title>
+<link rel="canonical" href="https://kolmoblocks.github.io/samples/quality-variations/">
+
+
+
+
+
+
+<script type="text/javascript" src="/js/jquery-3.3.1.min.js"></script>
+
+
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/nunito_sans.css">
+<link rel="stylesheet" href="css/custom.css">
+
+
+    <link rel="stylesheet" href="/css/light-style.css">
+
+
+
+<link rel="stylesheet" href="/css/custom.css">
+
+
+<link rel="shortcut icon" href="/img/favicon.ico">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+<body>
+    
+    <div class="section" id="top" style="background-image: url(/img/background.jpg); padding-top: 2em">
+        <div class="container">
+                <style> 
+@media (max-width: 1000px) {
+  .nav-anchor {
+      display: none
+  }
+}
+.nav-menu {
+  position: relative; 
+  left: 10vw; 
+}
+.nav-item { 
+  margin-right: 2em;
+  top: 1vh;
+}
+.fa { 
+  color: #696969
+}
+  </style>
+
+<nav class="nav nav-center" style="background-color: transparent;">
+    <span id="nav-toggle" class="nav-toggle"  onclick="document.getElementById('nav-menu').classList.toggle('is-active');">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </span>
+    <div id="nav-menu" class="nav-left nav-menu" >
+      <span class="nav-item">
+        <i class="fa fa-home" aria-hidden="true"></i><a class="nav-anchor" href="/"> Home</a>
+      </span>
+      <span class="nav-item">
+        <i class="fa fa-book" aria-hidden="true"></i><a class="nav-anchor" href="/documentation"> Documentation</a>
+      </span>
+     
+      <span class="nav-item">
+        <i class="fa fa-superpowers" aria-hidden="true"></i> <a class="nav-anchor" href="/samples"> Live Examples</a>
+      </span>
+      <span class="nav-item">
+        <i class="fa fa-github"  aria-hidden="true"></i><a class="nav-anchor" href="https://github.com/kolmoblocks" > Github
+          </a>
+        </span>
+         </div>
+</nav>
+
+
+        </div>
+
+        
+        <div class="container hero  fade-in one " style="background-color: transparent; margin-top: 5em; margin-bottom: 5em">
+            
+            <h1 class="tagline">  Quality Variations</h1>
+            <div class="post-data">
+                Mikhail Ignatovich | Jul 17, 2019 | 1 minute
+                read
+            </div>
+        </div>
+        
+        
+        <div class="sample_container">
+        
+            
+
+            <div class="section  fade-in two ">
+
+                <div class="container markdown  fade-in two  top-pad" style="margin-auto">
+                     <p><b>KolmoLD is a way to get media data with quality variations!</b></p>
+
+<p>This use case is about a dividing image to blocks and calculating the resulting image on the client side according to traffic condition. For this example, the image was divided by frequencies after discrete fast Fourier transformation to blocks. Each block contains data with range of frequency. Low frequencies describe the main details of the image. Higher frequencies describe the precise details of the image. To get image data from these blocks you need to apply reverse FFT to them. More blocks mean the best quality.</p>
+
+<p>Block 1 (low frequency)</p>
+
+<div class="interactive-canvas">
+<textarea class="manifest-text" id="block1" cols="100" rows="3">{ "doi": { "SHA256": "387126C669906546BF6B70CF3A1A8236EF446C8898FF3A22A810A99F45B59029" } }
+</textarea>
+<br>
+<span class="run-button-placeholder"></span>
+</div>
+
+<p><br>Block 2 (middle frequency)</p>
+
+<div class="interactive-canvas">
+<textarea class="manifest-text" id="block2" cols="100" rows="3" value="s">{"doi":{"SHA256":"57A3988068E5305D7392FEE11AC144B3BA410F1CFFC09F5861E998457AEB1E7A"}}</textarea>
+<br>
+<span class="run-button-placeholder"></span>
+</div>
+
+<p><br>Block 3 (high frequency)</p>
+
+<div class="interactive-canvas">
+<textarea class="manifest-text" id="block3" cols="100" rows="3">{ "doi": { "SHA256": "2568990365C2E8E19BBCEABA97FAA92CB0FF4FBE5203FFF8A3E90AD19A38FD65" } }</textarea>
+<br>
+<span class="run-button-placeholder"></span>
+</div>
+
+<p><br>Result image (Block 1)</p>
+
+<div class="interactive-canvas">
+<textarea class="manifest-text" id="image_block1" cols="100" rows="3">{ "doi": { "SHA256": "D3498F585189527D77B895061F063075CAC57B2924FD30B1EF484413B5CF8406" } }</textarea>
+<br>
+<span class="run-button-placeholder"></span>
+<span class="render-button-placeholder"></span>
+<span class="manifest-data-placeholder" id="image_block1_dw"></span>
+</div>
+
+<p><br>Result image (Block 1 + Block 2)</p>
+
+<div class="interactive-canvas">
+<textarea class="manifest-text" id="image_block1block2" cols="100" rows="3">{ "doi": { "SHA256": "744AEF1BF83A2FAF41202E3839CAB9656DF6C8A5582286D6E4F0E67A11C078AB" } }</textarea>
+<br>
+<span class="run-button-placeholder"></span>
+<span class="render-button-placeholder"></span>
+<span class="manifest-data-placeholder" id="image_block1block2_dw"></span>
+</div>
+
+<p><br>Result image (Block 1 + Block 2 + Block 3)</p>
+
+<div class="interactive-canvas">
+<textarea class="manifest-text" id="image_block1block2block3" cols="100" rows="3">{ "doi": { "SHA256": "C7ACD3820E98ECDA2DDD9753680C1E6EAA51C4BC2D5A13B41F372ED0D1A11ACE" } }</textarea>
+<br>
+<span class="run-button-placeholder"></span>
+<span class="render-button-placeholder"></span>
+<span class="manifest-data-placeholder" id="image_block1block2block3_dw"></span>
+</div>
+
+                </div>
+
+                <div class="disqus">
+                    
+                </div>
+
+                <div class="container has-text-centered top-pad">
+                    <hr>
+                    <a href="#top">
+                        <i class="fa fa-arrow-up"></i>
+                    </a>
+                    <hr>
+                </div>
+
+                <div class="section" id="footer">
+    <div class="container has-text-centered">
+        
+    </div>
+    <div class="container has-text-centered">
+    </div>
+</div>
+
+            </div>
+
+            <div class="section  fade-in two ">
+                <div id="root"></div>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    
+    <script>
+        $('a[href^="https:\/\/kolmoblocks.github.io\/samples\/quality-variations\/#"]').click(function (e) {
+            e.preventDefault();
+            var target = this.hash;
+            $('html, body').animate({
+                scrollTop: $(target).offset().top
+            }, 500);
+            return false;
+        })
+    </script>
+
+<script>!function(l){function e(e){for(var r,t,n=e[0],o=e[1],u=e[2],f=0,i=[];f<n.length;f++)t=n[f],p[t]&&i.push(p[t][0]),p[t]=0;for(r in o)Object.prototype.hasOwnProperty.call(o,r)&&(l[r]=o[r]);for(s&&s(e);i.length;)i.shift()();return c.push.apply(c,u||[]),a()}function a(){for(var e,r=0;r<c.length;r++){for(var t=c[r],n=!0,o=1;o<t.length;o++){var u=t[o];0!==p[u]&&(n=!1)}n&&(c.splice(r--,1),e=f(f.s=t[0]))}return e}var t={},p={1:0},c=[];function f(e){if(t[e])return t[e].exports;var r=t[e]={i:e,l:!1,exports:{}};return l[e].call(r.exports,r,r.exports,f),r.l=!0,r.exports}f.m=l,f.c=t,f.d=function(e,r,t){f.o(e,r)||Object.defineProperty(e,r,{enumerable:!0,get:t})},f.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},f.t=function(r,e){if(1&e&&(r=f(r)),8&e)return r;if(4&e&&"object"==typeof r&&r&&r.__esModule)return r;var t=Object.create(null);if(f.r(t),Object.defineProperty(t,"default",{enumerable:!0,value:r}),2&e&&"string"!=typeof r)for(var n in r)f.d(t,n,function(e){return r[e]}.bind(null,n));return t},f.n=function(e){var r=e&&e.__esModule?function(){return e.default}:function(){return e};return f.d(r,"a",r),r},f.o=function(e,r){return Object.prototype.hasOwnProperty.call(e,r)},f.p="/";var r=window.webpackJsonp=window.webpackJsonp||[],n=r.push.bind(r);r.push=e,r=r.slice();for(var o=0;o<r.length;o++)e(r[o]);var s=n;a()}([])</script><script src="/js/2.f0adba9b.chunk.js"></script><script src="/js/main.cf9e52ce.chunk.js"></script>
+
+</body>

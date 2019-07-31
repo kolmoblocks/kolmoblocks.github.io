@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Samples on Kolmoblocks: self-describing data encoding</title>
+    <link>https://kolmoblocks.github.io/samples/</link>
+    <description>Recent content in Samples on Kolmoblocks: self-describing data encoding</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 17 Jul 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://kolmoblocks.github.io/samples/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Hello World Sample</title>
+      <link>https://kolmoblocks.github.io/samples/hello-world/</link>
+      <pubDate>Wed, 17 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://kolmoblocks.github.io/samples/hello-world/</guid>
+      <description>KolmoLD is a way to get data generated from others!
+In the KolmoLD framework, content is generated. The formula for generating this content is defined in a manifest. Data chunks can also be defined and referenced by these formulas. Manifests and formulas are best explained by a &amp;ldquo;Hello World&amp;rdquo; example. We will create the &amp;ldquo;Hello World&amp;rdquo; string by concatenating two strings together: &amp;ldquo;Hello &amp;rdquo; and &amp;ldquo;World&amp;rdquo;. These two strings are plain text data objects.</description>
+    </item>
+    
+    <item>
+      <title>Brotli Sample</title>
+      <link>https://kolmoblocks.github.io/samples/brotli/</link>
+      <pubDate>Wed, 17 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://kolmoblocks.github.io/samples/brotli/</guid>
+      <description>KolmoLD is a way to get the support of new data formats!
+KolmoLD manifests provides a way to distribute new data compression algorithms along the same channel as the compressed data. This means that a new codec that has not been installed as a browser add-on or an application upgrade is accessible client-side. Once the manifest defining the codec has been downloaded, it can be stored and re-used on all files that has been compressed with it.</description>
+    </item>
+    
+    <item>
+      <title>Data Transformation</title>
+      <link>https://kolmoblocks.github.io/samples/data-transformation/</link>
+      <pubDate>Wed, 17 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://kolmoblocks.github.io/samples/data-transformation/</guid>
+      <description>KolmoLD is a way to describe data as a transformation for another data!
+A formula that transforms input data into something new can easily be implemented in the KolmoLD framework. The transformation formula is defined as an executable data object. In this example, it transforms plain text into upper case letters. A manifest defines the data objects that need to be transformed and outputs the results.
+{ &#34;doi&#34;: { &#34;SHA256&#34;: &#34;</description>
+    </item>
+    
+    <item>
+      <title>Hash Calculator</title>
+      <link>https://kolmoblocks.github.io/samples/hash-calculator/</link>
+      <pubDate>Wed, 17 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://kolmoblocks.github.io/samples/hash-calculator/</guid>
+      <description>KolmoLD is a way to calculate heavy algorithms by Webassembly technology for a short time!
+KolmoLD formulas are algorithms that can transform data objects. The Hash Calculator defines a formula that applies the Secure Hash Algorithm to a data object and produces a SHA256. The formula itself has been defined in an executable data object, and two arguments: data object and algorithm name can be passed in as arguments. This example uses the “Hello World” as a data object and &amp;ldquo;SHA256&amp;rdquo; for algorithm name.</description>
+    </item>
+    
+    <item>
+      <title>Type-Specific Compression</title>
+      <link>https://kolmoblocks.github.io/samples/type-specific-compression/</link>
+      <pubDate>Wed, 17 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://kolmoblocks.github.io/samples/type-specific-compression/</guid>
+      <description>KolmoLD is a way to get the best compression ratio for a specific type of data!
+General-purpose lossless compression algorithms have served web developers well, but with the advent of dictionary coders compression algorithms can be tweaked to achieve optimal compression ratios for a specific context. Keeping the context in mind is possible with KolmoLD. Let’s say the first version of the dictionary required for this compression algorithm (e.g. zstandard) is trained on a set of data files.</description>
+    </item>
+    
+    <item>
+      <title>Quality Variations</title>
+      <link>https://kolmoblocks.github.io/samples/quality-variations/</link>
+      <pubDate>Wed, 17 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://kolmoblocks.github.io/samples/quality-variations/</guid>
+      <description>KolmoLD is a way to get media data with quality variations!
+This use case is about a dividing image to blocks and calculating the resulting image on the client side according to traffic condition. For this example, the image was divided by frequencies after discrete fast Fourier transformation to blocks. Each block contains data with range of frequency. Low frequencies describe the main details of the image. Higher frequencies describe the precise details of the image.</description>
+    </item>
+    
+  </channel>
+</rss>

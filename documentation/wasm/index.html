@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="description" content="HON Project">
+
+<title>
+
+
+     WebAssembly 
+
+</title>
+<link rel="canonical" href="https://kolmoblocks.github.io/documentation/wasm/">
+
+
+
+
+
+
+<script type="text/javascript" src="/js/jquery-3.3.1.min.js"></script>
+
+
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/nunito_sans.css">
+<link rel="stylesheet" href="css/custom.css">
+
+
+    <link rel="stylesheet" href="/css/light-style.css">
+
+
+
+<link rel="stylesheet" href="/css/custom.css">
+
+
+<link rel="shortcut icon" href="/img/favicon.ico">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+<body>
+    <div class="section" id="top" style="background-image: url(/img/background.jpg); padding-top: 2em">
+        <div class="container" style="top: opx;">
+                <style> 
+@media (max-width: 1000px) {
+  .nav-anchor {
+      display: none
+  }
+}
+.nav-menu {
+  position: relative; 
+  left: 10vw; 
+}
+.nav-item { 
+  margin-right: 2em;
+  top: 1vh;
+}
+.fa { 
+  color: #696969
+}
+  </style>
+
+<nav class="nav nav-center" style="background-color: transparent;">
+    <span id="nav-toggle" class="nav-toggle"  onclick="document.getElementById('nav-menu').classList.toggle('is-active');">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </span>
+    <div id="nav-menu" class="nav-left nav-menu" >
+      <span class="nav-item">
+        <i class="fa fa-home" aria-hidden="true"></i><a class="nav-anchor" href="/"> Home</a>
+      </span>
+      <span class="nav-item">
+        <i class="fa fa-book" aria-hidden="true"></i><a class="nav-anchor" href="/documentation"> Documentation</a>
+      </span>
+     
+      <span class="nav-item">
+        <i class="fa fa-superpowers" aria-hidden="true"></i> <a class="nav-anchor" href="/samples"> Live Examples</a>
+      </span>
+      <span class="nav-item">
+        <i class="fa fa-github"  aria-hidden="true"></i><a class="nav-anchor" href="https://github.com/kolmoblocks" > Github
+          </a>
+        </span>
+         </div>
+</nav>
+
+
+        </div>
+        
+    
+        
+        <div class="container hero  fade-in one " style="background-color: transparent; margin-top: 5em; margin-bottom: 5em">
+            
+            <h1 class="tagline">  WebAssembly</h1>
+            <div class="post-data">
+                Mikhail Ignatovich | Jul 19, 2018 | 3 minutes read
+            </div>
+        </div>
+        
+
+        <div class="section  fade-in two ">
+
+
+            <div class="container markdown  fade-in two  top-pad">
+
+
+                 
+
+<p>One of the supported actors in <a href="/documentation/manifest">Manifest</a> is WebAssembly (WASM). To gain support as an actor in Kolmonet, WASM must support the special interface (listed below).
+The implemented sequence of calls is:</p>
+
+<ul>
+<li>For each argument:
+
+<ul>
+<li>Reserve memory for the argument name (_set_arg_name)</li>
+<li>Set to reserved memory name of the argument</li>
+<li>Get argument&rsquo;s index (_get_arg_index)</li>
+<li>Reserve memory for the argument&rsquo;s value (_set_arg)</li>
+<li>Set to reserved memory argument&rsquo;s value</li>
+</ul></li>
+<li>Execute WASM algorithm (_exec)</li>
+<li>Get result&rsquo;s pointer and size (_get_result, _get_result_size)</li>
+<li>If any errors occur get error&rsquo;s pointer and size to get an error message(_get_last_error, _get_last_error_size)</li>
+</ul>
+
+<p><strong>WASM interface (Rust):</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Rust" data-lang="Rust">_set_arg_name(arg_handle: <span style="color:#66d9ef">u8</span>, size: <span style="color:#66d9ef">usize</span>) -&gt; <span style="color:#f92672">*</span><span style="color:#66d9ef">mut</span> c_void
+_get_arg_index(arg_handle: <span style="color:#66d9ef">u8</span>) -&gt; <span style="color:#66d9ef">u8</span>
+<span style="color:#a6e22e">_set_arg</span>(arg_index: <span style="color:#66d9ef">u8</span>, size: <span style="color:#66d9ef">usize</span>) -&gt; <span style="color:#f92672">*</span><span style="color:#66d9ef">mut</span> c_void
+_get_result() -&gt; <span style="color:#f92672">*</span><span style="color:#66d9ef">mut</span> c_void 
+_get_result_size() -&gt; <span style="color:#66d9ef">usize</span> 
+<span style="color:#a6e22e">_get_last_error</span>() -&gt; <span style="color:#f92672">*</span><span style="color:#66d9ef">mut</span> c_void 
+_get_last_error_size() -&gt; <span style="color:#66d9ef">usize</span> 
+<span style="color:#a6e22e">_exec</span>() -&gt; <span style="color:#66d9ef">bool</span> 
+</code></pre></div>
+<p><strong>WASM interface &copy;:</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">int</span><span style="color:#f92672">*</span> _set_arg_name(uint8_t arg_handle, <span style="color:#66d9ef">int</span> size)
+uint8_t _get_arg_index(uint8_t arg_handle)
+<span style="color:#66d9ef">int</span><span style="color:#f92672">*</span> _set_arg(uint8_t arg_index, <span style="color:#66d9ef">int</span> size)
+<span style="color:#66d9ef">int</span><span style="color:#f92672">*</span> _get_result()
+<span style="color:#66d9ef">int</span> _get_result_size()
+<span style="color:#66d9ef">int</span><span style="color:#f92672">*</span> _get_last_error()
+<span style="color:#66d9ef">int</span> _get_last_error_size()
+<span style="color:#66d9ef">int</span> _exec()</code></pre></div>
+<h2 id="set-arg-name">_set_arg_name</h2>
+
+<p>This method reserve memory inside WASM for receiving the parameter&rsquo;s name. Parameter identified by its handle. Later, parameter handle will use for getting parameter index by calling _get_arg_index.
+The goal of call sequence _set_arg_name -&gt; _get_arg_index is to get parameter index by parameter&rsquo;s name. It allows naming parameters in Manifest in a human readable form.</p>
+
+<p>Parameters:
+- arg_handle - parameter&rsquo;s handle
+- size - size in bytes for name of parameter</p>
+
+<p>Return value:
+- Pointer to memory inside WASM (null if error)</p>
+
+<h2 id="get-arg-index">_get_arg_index</h2>
+
+<p>This method allows getting parameter index by parameter&rsquo;s handle. Parameter index will be used later for call _set_arg.</p>
+
+<p>Parameters:
+- arg_handle - parameter&rsquo;s handle</p>
+
+<p>Return value:
+- Argument index (0 if error)</p>
+
+<h2 id="set-arg">_set_arg</h2>
+
+<p>This method reserve memory inside WASM for receiving the parameter&rsquo;s value.</p>
+
+<p>Parameters:
+- arg_index - parameter&rsquo;s index
+- size - size in bytes for value of parameter</p>
+
+<p>Return value:
+- Pointer to memory inside WASM (null if error)</p>
+
+<h2 id="get-result">_get_result</h2>
+
+<p>This method return pointer to memory containing the result of WASM execution.</p>
+
+<p>Return value:
+- Pointer to memory inside WASM (null if error)</p>
+
+<h2 id="get-result-size">_get_result_size</h2>
+
+<p>This method return size of memory containing the result of WASM execution.</p>
+
+<p>Return value:
+- Size of memory inside WASM (0 if execution error occurs or has no executed yet)</p>
+
+<h2 id="get-last-error">_get_last_error</h2>
+
+<p>This method return pointer to memory containing error message of last WASM unsuccessful call.</p>
+
+<p>Return value:
+- Pointer to memory inside WASM (null if error)</p>
+
+<h2 id="get-last-error-size">_get_last_error_size</h2>
+
+<p>This method return size of memory containing error message of last WASM unsuccessful call.</p>
+
+<p>Return value:
+- Size of memory inside WASM (0 if no error was detected)</p>
+
+<h2 id="exec">_exec</h2>
+
+<p>This method make execution of WASM algorithm. All arguments of the algorithm must be initialized before calling.</p>
+
+<p>Return value:
+- Result of execution (true if succeeded, false if execution failed)</p>
+
+            </div>
+
+            <div class="disqus">
+                
+            </div>
+
+            <div class="container has-text-centered top-pad">
+                <hr>
+                
+                <hr>
+            </div>
+
+            <div class="section" id="footer">
+    <div class="container has-text-centered">
+        
+    </div>
+    <div class="container has-text-centered">
+    </div>
+</div>
+
+        </div>
+        
+    </div>
+    
+
+    
+    <script>
+        $('a[href^="https:\/\/kolmoblocks.github.io\/documentation\/wasm\/#"]').click(function (e) {
+            e.preventDefault();
+            var target = this.hash;
+            $('html, body').animate({
+                scrollTop: $(target).offset().top
+            }, 500);
+            return false;
+        })
+    </script>
+
+</body>

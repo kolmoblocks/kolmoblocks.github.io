@@ -28,16 +28,19 @@
 
 <link rel="stylesheet" href="/css/font-awesome.min.css">
 <link rel="stylesheet" href="/css/nunito_sans.css">
+<link rel="stylesheet" href="css/custom.css">
 
 
     <link rel="stylesheet" href="/css/light-style.css">
 
 
 
-
+<link rel="stylesheet" href="/css/custom.css">
 
 
 <link rel="shortcut icon" href="/img/favicon.ico">
+
+
 
 
 
@@ -61,28 +64,52 @@
         
         <div class="section  fade-in two ">
 
-            <div class="container">
+            <div class="container" style="top: 0px;">
                 
-                <hr>
-<nav class="nav nav-center">
+                <style> 
+@media (max-width: 1000px) {
+  .nav-anchor {
+      display: none
+  }
+}
+.nav-menu {
+  position: relative; 
+  left: 10vw; 
+}
+.nav-item { 
+  margin-right: 2em;
+  top: 1vh;
+}
+.fa { 
+  color: #696969
+}
+  </style>
+
+<nav class="nav nav-center" style="background-color: transparent;">
     <span id="nav-toggle" class="nav-toggle"  onclick="document.getElementById('nav-menu').classList.toggle('is-active');">
       <span></span>
       <span></span>
       <span></span>
+      <span></span>
     </span>
-    <div id="nav-menu" class="nav-left nav-menu">
+    <div id="nav-menu" class="nav-left nav-menu" >
       <span class="nav-item">
-        <a href="/">Kolmoblocks</a>
+        <i class="fa fa-home" aria-hidden="true"></i><a class="nav-anchor" href="/"> Home</a>
       </span>
       <span class="nav-item">
-        <a href="/documentation">Documentation</a>
+        <i class="fa fa-book" aria-hidden="true"></i><a class="nav-anchor" href="/documentation"> Documentation</a>
+      </span>
+     
+      <span class="nav-item">
+        <i class="fa fa-superpowers" aria-hidden="true"></i> <a class="nav-anchor" href="/samples"> Live Examples</a>
       </span>
       <span class="nav-item">
-        <a href="https://github.com/kolmoblocks">Github</a>
-      </span>
-    </div>
+        <i class="fa fa-github"  aria-hidden="true"></i><a class="nav-anchor" href="https://github.com/kolmoblocks" > Github
+          </a>
+        </span>
+         </div>
 </nav>
-<hr>
+
 
             </div>
             
@@ -165,6 +192,7 @@ encoded <span style="color:#f92672">=</span> <span style="color:#ae81ff">0b00011
 
             <div class="section" id="footer">
     <div class="container has-text-centered">
+        
     </div>
     <div class="container has-text-centered">
     </div>

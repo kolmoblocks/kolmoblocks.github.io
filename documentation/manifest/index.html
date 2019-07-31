@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="description" content="HON Project">
+
+<title>
+
+
+     Manifest 
+
+</title>
+<link rel="canonical" href="https://kolmoblocks.github.io/documentation/manifest/">
+
+
+
+
+
+
+<script type="text/javascript" src="/js/jquery-3.3.1.min.js"></script>
+
+
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/nunito_sans.css">
+<link rel="stylesheet" href="css/custom.css">
+
+
+    <link rel="stylesheet" href="/css/light-style.css">
+
+
+
+<link rel="stylesheet" href="/css/custom.css">
+
+
+<link rel="shortcut icon" href="/img/favicon.ico">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+<body>
+    <div class="section" id="top" style="background-image: url(/img/background.jpg); padding-top: 2em">
+        <div class="container" style="top: opx;">
+                <style> 
+@media (max-width: 1000px) {
+  .nav-anchor {
+      display: none
+  }
+}
+.nav-menu {
+  position: relative; 
+  left: 10vw; 
+}
+.nav-item { 
+  margin-right: 2em;
+  top: 1vh;
+}
+.fa { 
+  color: #696969
+}
+  </style>
+
+<nav class="nav nav-center" style="background-color: transparent;">
+    <span id="nav-toggle" class="nav-toggle"  onclick="document.getElementById('nav-menu').classList.toggle('is-active');">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </span>
+    <div id="nav-menu" class="nav-left nav-menu" >
+      <span class="nav-item">
+        <i class="fa fa-home" aria-hidden="true"></i><a class="nav-anchor" href="/"> Home</a>
+      </span>
+      <span class="nav-item">
+        <i class="fa fa-book" aria-hidden="true"></i><a class="nav-anchor" href="/documentation"> Documentation</a>
+      </span>
+     
+      <span class="nav-item">
+        <i class="fa fa-superpowers" aria-hidden="true"></i> <a class="nav-anchor" href="/samples"> Live Examples</a>
+      </span>
+      <span class="nav-item">
+        <i class="fa fa-github"  aria-hidden="true"></i><a class="nav-anchor" href="https://github.com/kolmoblocks" > Github
+          </a>
+        </span>
+         </div>
+</nav>
+
+
+        </div>
+        
+    
+        
+        <div class="container hero  fade-in one " style="background-color: transparent; margin-top: 5em; margin-bottom: 5em">
+            
+            <h1 class="tagline">  Manifest</h1>
+            <div class="post-data">
+                Mikhail Ignatovich | Jul 19, 2018 | 2 minutes read
+            </div>
+        </div>
+        
+
+        <div class="section  fade-in two ">
+
+
+            <div class="container markdown  fade-in two  top-pad">
+
+
+                 
+
+<p>Manifest describe attributes and ways to reproduce resulting data.
+One of presentation form of The Manifest is JSON.</p>
+
+<p>Manifest may contain:</p>
+
+<ul>
+<li><a href="#properties">Properties</a></li>
+<li><a href="#doi">Data Object Identifiers (DOI)</a></li>
+<li><a href="#formulas">Formulas</a></li>
+<li>Raw Value</li>
+</ul>
+
+<p><strong>Example 1 (manifest with one formula):</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+	<span style="color:#f92672">&#34;MIME&#34;</span>: <span style="color:#e6db74">&#34;text/plain; charset=utf-8&#34;</span>,
+	<span style="color:#f92672">&#34;size&#34;</span>: <span style="color:#ae81ff">202707</span>,
+	<span style="color:#f92672">&#34;doi&#34;</span>: {
+		<span style="color:#f92672">&#34;SHA256&#34;</span>: <span style="color:#e6db74">&#34;6F59B23AA0D0F7BEE8AEF463F1527FB025217095707B72D25F25C8AE62EA58F6&#34;</span>
+	},
+	<span style="color:#f92672">&#34;formulas&#34;</span>: [
+		{
+			<span style="color:#f92672">&#34;actor&#34;</span>: {
+				<span style="color:#f92672">&#34;wasm&#34;</span>: {
+					<span style="color:#f92672">&#34;doi&#34;</span>: {
+						<span style="color:#f92672">&#34;SHA256&#34;</span>: <span style="color:#e6db74">&#34;740F4421EBC579AFE1F4FB0F57C15E698B7BB525EA19E22B96634D49BB2147EE&#34;</span>
+					}
+				}
+			},
+			<span style="color:#f92672">&#34;parameters&#34;</span>: {
+				<span style="color:#f92672">&#34;arg1&#34;</span>: {
+					<span style="color:#f92672">&#34;doi&#34;</span>: {
+						<span style="color:#f92672">&#34;SHA256&#34;</span>: <span style="color:#e6db74">&#34;ABCF598718AEAC83B850A6BF0773F3B8C3F8E43F33A05F4A571CFF5355DE58AE&#34;</span>
+					}
+				}
+			}
+		}
+	]
+}</code></pre></div>
+<p><strong>Example 2 (manifest with raw value):</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+	<span style="color:#f92672">&#34;raw&#34;</span> : <span style="color:#e6db74">&#34;Hello World&#34;</span>
+}</code></pre></div>
+<p><strong>Example 3 (manifest with DOI only):</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">{
+	<span style="color:#f92672">&#34;doi&#34;</span>: {
+		<span style="color:#f92672">&#34;SHA256&#34;</span>: <span style="color:#e6db74">&#34;6F59B23AA0D0F7BEE8AEF463F1527FB025217095707B72D25F25C8AE62EA58F6&#34;</span>
+	}
+}</code></pre></div>
+<hr />
+
+<h2 id="properties">Properties</h2>
+
+<p>Manifest may contain properties such as size and MIME. Size property contains the size of the resulting data in bytes. MIME property contains the type of the resulting data. All of these properties are optional. Usually, the values of the properties used to check resulting data.</p>
+
+<p><strong>Example (specifying size property):</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#f92672">&#34;size&#34;</span> : <span style="color:#ae81ff">8080</span>
+}</code></pre></div>
+<p><strong>Example (specifying MIME property):</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#f92672">&#34;MIME&#34;</span> : <span style="color:#e6db74">&#34;text/plain; charset=utf-8&#34;</span>
+}</code></pre></div>
+<hr />
+
+<h2 id="doi">DOI</h2>
+
+<p>Data Object Identifier (DOI) is a set of pair values contains the name of the hashing algorithm and value of the hash. This information is mandatory for all manifest except manifests are containing the Raw Value. At this time, Kolmonet support only SHA256 algorithm. Value of the hash is the result of applying a hash algorithm to resulting data.</p>
+
+<p><strong>Example (specifying DOI):</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#f92672">&#34;doi&#34;</span> : {
+        <span style="color:#f92672">&#34;SHA256&#34;</span>: <span style="color:#e6db74">&#34;ABCF598718AEAC83B850A6BF0773F3B8C3F8E43F33A05F4A571CFF5355DE58AE&#34;</span>
+    }
+}</code></pre></div>
+<hr />
+
+<h2 id="formulas">Formulas</h2>
+
+<p>Each Manifest may contain formulas.</p>
+
+<p><strong>Pseudo code example for formulas:</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#f92672">&#34;formulas&#34;</span>: 
+    [
+            <span style="color:#e6db74">&#34;Formula 1&#34;</span>,        
+            <span style="color:#e6db74">&#34;Formula 2&#34;</span>,
+
+            <span style="color:#e6db74">&#34;...&#34;</span>,
+
+            <span style="color:#e6db74">&#34;Formula N&#34;</span>
+    ]
+}</code></pre></div>
+<p>At this time, Kolmonet support formulas contains actor and parameters. Supported type of actors is WebAssembly only. Two types of WebEssembly instantiation supported:</p>
+
+<ul>
+<li>WebAssembly without imports (pure WebAssembly)</li>
+<li>WebAssembly with JavaScript glue code (Emscripten generated)</li>
+</ul>
+
+<p>Every entity (actor.wasm, parameters etc.) in the formula is The Manifest. Below are examples for all types of supported formulas. Parameter&rsquo;s count and its names in the formula are defined <a href="/documentation/wasm">WebAssembly&rsquo;s interface</a>.</p>
+
+<p><strong>Pseudo code example for pure WebAssembly formula:</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#f92672">&#34;actor&#34;</span>: {
+        <span style="color:#f92672">&#34;wasm&#34;</span>: {
+            <span style="color:#f92672">&#34;Manifest for WebAssembly&#34;</span>
+        }
+    },
+    <span style="color:#f92672">&#34;parameters&#34;</span>: {
+        <span style="color:#f92672">&#34;arg1&#34;</span> : {
+            <span style="color:#f92672">&#34;Manifest for Argument 1&#34;</span>
+        },
+        <span style="color:#f92672">&#34;arg2&#34;</span> : {
+            <span style="color:#f92672">&#34;Manifest for Argument 2&#34;</span>
+        },
+
+        <span style="color:#f92672">&#34;...&#34;</span>,
+
+        <span style="color:#f92672">&#34;argM&#34;</span> : {
+            <span style="color:#f92672">&#34;Manifest for Argument M&#34;</span>
+        },
+    }
+}</code></pre></div>
+<p><strong>Pseudo code example for WebAssembly with JavaScript glue code formula:</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#f92672">&#34;actor&#34;</span>: {
+        <span style="color:#f92672">&#34;wasm&#34;</span>: {
+            <span style="color:#f92672">&#34;Manifest for WebAssembly&#34;</span>
+        },
+        <span style="color:#f92672">&#34;jsglue&#34;</span>:{
+            <span style="color:#f92672">&#34;Manifest for JavaScript glue code&#34;</span>
+        }
+    },
+    <span style="color:#f92672">&#34;parameters&#34;</span>: {
+        <span style="color:#f92672">&#34;arg1&#34;</span>: {
+            <span style="color:#f92672">&#34;Manifest for Argument 1&#34;</span>
+        },
+        <span style="color:#f92672">&#34;arg2&#34;</span>: {
+            <span style="color:#f92672">&#34;Manifest for Argument 2&#34;</span>
+        },
+
+        <span style="color:#f92672">&#34;...&#34;</span>,
+        
+        <span style="color:#f92672">&#34;argM&#34;</span>: {
+            <span style="color:#f92672">&#34;Manifest for Argument M&#34;</span>
+        },
+    }
+}</code></pre></div>
+            </div>
+
+            <div class="disqus">
+                
+            </div>
+
+            <div class="container has-text-centered top-pad">
+                <hr>
+                
+                <hr>
+            </div>
+
+            <div class="section" id="footer">
+    <div class="container has-text-centered">
+        
+    </div>
+    <div class="container has-text-centered">
+    </div>
+</div>
+
+        </div>
+        
+    </div>
+    
+
+    
+    <script>
+        $('a[href^="https:\/\/kolmoblocks.github.io\/documentation\/manifest\/#"]').click(function (e) {
+            e.preventDefault();
+            var target = this.hash;
+            $('html, body').animate({
+                scrollTop: $(target).offset().top
+            }, 500);
+            return false;
+        })
+    </script>
+
+</body>

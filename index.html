@@ -2,7 +2,7 @@
 <html lang="en-us">
 
 <head>
-	<meta name="generator" content="Hugo 0.50-DEV" />
+	<meta name="generator" content="Hugo 0.55.6" />
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="chrome=1">
 <meta name="HandheldFriendly" content="True">
@@ -29,13 +29,14 @@
 
 <link rel="stylesheet" href="/css/font-awesome.min.css">
 <link rel="stylesheet" href="/css/nunito_sans.css">
+<link rel="stylesheet" href="css/custom.css">
 
 
     <link rel="stylesheet" href="/css/light-style.css">
 
 
 
-
+<link rel="stylesheet" href="/css/custom.css">
 
 
 <link rel="shortcut icon" href="/img/favicon.ico">
@@ -46,6 +47,8 @@
 
 
   <link href="https://kolmoblocks.github.io/index.xml" rel="alternate" type="application/rss+xml" title="Kolmoblocks: self-describing data encoding" />
+
+
 
 
 </head>
@@ -60,44 +63,69 @@
         </div>
 
 
-<div id="top">
-    <div class="container">
-                <hr>
-<nav class="nav nav-center">
+<div id="top" style="position: relative">
+    <div class="container" style="position: fixed; z-index: 2; margin-top: 1em; background-color: transparent">
+                <style> 
+@media (max-width: 1000px) {
+  .nav-anchor {
+      display: none
+  }
+}
+.nav-menu {
+  position: relative; 
+  left: 10vw; 
+}
+.nav-item { 
+  margin-right: 2em;
+  top: 1vh;
+}
+.fa { 
+  color: #696969
+}
+  </style>
+
+<nav class="nav nav-center" style="background-color: transparent;">
     <span id="nav-toggle" class="nav-toggle"  onclick="document.getElementById('nav-menu').classList.toggle('is-active');">
       <span></span>
       <span></span>
       <span></span>
+      <span></span>
     </span>
-    <div id="nav-menu" class="nav-left nav-menu">
+    <div id="nav-menu" class="nav-left nav-menu" >
       <span class="nav-item">
-        <a href="/">Kolmoblocks</a>
+        <i class="fa fa-home" aria-hidden="true"></i><a class="nav-anchor" href="/"> Home</a>
       </span>
       <span class="nav-item">
-        <a href="/documentation">Documentation</a>
+        <i class="fa fa-book" aria-hidden="true"></i><a class="nav-anchor" href="/documentation"> Documentation</a>
+      </span>
+     
+      <span class="nav-item">
+        <i class="fa fa-superpowers" aria-hidden="true"></i> <a class="nav-anchor" href="/samples"> Live Examples</a>
       </span>
       <span class="nav-item">
-        <a href="https://github.com/kolmoblocks">Github</a>
-      </span>
-    </div>
+        <i class="fa fa-github"  aria-hidden="true"></i><a class="nav-anchor" href="https://github.com/kolmoblocks" > Github
+          </a>
+        </span>
+         </div>
 </nav>
-<hr>
+
 
     </div>
 
 
-<div class="hero is-dark">
+<div class="hero is-dark" style="background-image: url(/img/background.jpg)">
+    <div class="logo" ><img src="/img/logo.png" alt="Pony wearing sambrero" style="max-width: 100%; display: block"></div>
     <div class="hero-body">
         <div class="container has-text-centered">
             
-            <h1 class="title fade-in one">
+            <h1 class="title fade-in one" style="font-size: 6em; color:	#ADADAD">
 
-                 Kolmoblocks
+                 KolmoLD
             </h1>
             
 
             
-            <h3 class="is-3 fade-in two">
+            <h3 class="is-3 fade-in two" style="color: #ADADAD", font-size: 2em;>
                 enable a new kind of computer networks, 
                 networks that are <b>content-addressable</b>, 
                 feature <b>composable data</b>, 
@@ -106,14 +134,28 @@
             <br>
             
             <div class=" fade-in three">
-                <a class="button is-primary is-inverted  is-dark" href="/documentation/whitepaper">
-    read the whitepaper
+                
+<a class="button is-primary is-inverted  is-dark menu-button-a" href="/documentation/whitepaper" style="background-color: #ADADAD; color: white">
+    CONCEPT
 </a>
-<a class="button is-primary is-inverted  is-dark" id="showModal">
-    watch an overview
+<a class="button is-primary is-inverted  is-dark menu-button-a" id="showModal" style="background-color: #ADADAD; color: white">
+    VIDEO TOUR
+</a>
+<a class="button is-primary is-inverted  is-dark menu-button-a" href="/samples" style="background-color: #ADADAD; color: white">
+    LIVE EXAMPLES
 </a>
 
             </div>
+
+            <style>
+                @media (max-width: 1300px){
+           h1 .title {font-size: 4em}
+            }
+                @media (max-width: 900px){
+           h1 .title {font-size: 2em}
+  
+            } </style>
+
             
         </div>
     </div>
@@ -192,6 +234,7 @@ encoded <span style="color:#f92672">=</span> <span style="color:#ae81ff">0b00011
 
 <div class="section" id="footer">
     <div class="container has-text-centered">
+        
     </div>
     <div class="container has-text-centered">
     </div>
