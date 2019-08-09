@@ -8,13 +8,38 @@
   </url>
   
   <url>
+    <loc>https://kolmoblocks.github.io/documentation/learning_resources/</loc>
+    <lastmod>2018-07-15T18:02:42-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://kolmoblocks.github.io/samples/brotli/</loc>
     <lastmod>2019-07-17T00:00:00+00:00</lastmod>
   </url>
   
   <url>
+    <loc>https://kolmoblocks.github.io/documentation/network_design/</loc>
+    <lastmod>2018-08-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kolmoblocks.github.io/documentation/scripts/</loc>
+    <lastmod>2018-08-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kolmoblocks.github.io/documentation/manifest/</loc>
+    <lastmod>2018-07-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://kolmoblocks.github.io/samples/data-transformation/</loc>
     <lastmod>2019-07-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kolmoblocks.github.io/documentation/wasm/</loc>
+    <lastmod>2018-07-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -45,6 +70,12 @@
   </url>
   
   <url>
+    <loc>https://kolmoblocks.github.io/documentation/</loc>
+    <lastmod>2018-08-06T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://kolmoblocks.github.io/summary/</loc>
     <lastmod>2018-08-02T18:35:05-04:00</lastmod>
   </url>
@@ -52,37 +83,6 @@
   <url>
     <loc>https://kolmoblocks.github.io/about/</loc>
     <lastmod>2018-07-19T18:35:05-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://kolmoblocks.github.io/documentation/</loc>
-    <lastmod>2018-07-19T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://kolmoblocks.github.io/documentation/article/</loc>
-    <lastmod>2018-07-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://kolmoblocks.github.io/documentation/manifest/</loc>
-    <lastmod>2018-07-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://kolmoblocks.github.io/documentation/wasm/</loc>
-    <lastmod>2018-07-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://kolmoblocks.github.io/documentation/learning_resources/</loc>
-    <lastmod>2018-07-15T18:02:42-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://kolmoblocks.github.io/documentation/whitepaper/</loc>
-    <lastmod>2018-07-15T18:02:42-04:00</lastmod>
   </url>
   
   <url>

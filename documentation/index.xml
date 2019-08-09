@@ -6,19 +6,39 @@
     <description>Recent content in Documentations on Kolmoblocks: self-describing data encoding</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 19 Jul 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 06 Aug 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://kolmoblocks.github.io/documentation/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>KolmoLD</title>
-      <link>https://kolmoblocks.github.io/documentation/article/</link>
-      <pubDate>Thu, 19 Jul 2018 00:00:00 +0000</pubDate>
+      <title>learning</title>
+      <link>https://kolmoblocks.github.io/documentation/learning_resources/</link>
+      <pubDate>Sun, 15 Jul 2018 18:02:42 -0400</pubDate>
       
-      <guid>https://kolmoblocks.github.io/documentation/article/</guid>
-      <description>KolmoLD: Data Modeling for the Modern Internet ABSTRACT KolmoLD is a framework for content-addressable networking with a programmable layer: the data objects distributed across the network can contain program code to decode the data that is specified to be executed in a sandboxed environment and references other data objects based on a cryptographic hash function naming scheme.
-Traditionally, the algorithms to access given data are delivered via a channel that is separate from the one used to deliver the data itself, and usually involves installing custom software that could introduce security risks.</description>
+      <guid>https://kolmoblocks.github.io/documentation/learning_resources/</guid>
+      <description>The list of (external) learning materials that people have found useful to learn more about the relevant technologies, to understand the kolmoblocks project, motivation and the context behind it, as well as its positioning within the industry.
+Feel free to propose additions by opening a PR with your changes. The Wikipedia definition pages and the official project&amp;rsquo;s websites might be ommitted as self-evident.
+Relevant information theory concepts  &amp;ldquo;Kolmogorov Complexity and Our Search for Meaning&amp;rdquo; by Noson S.</description>
+    </item>
+    
+    <item>
+      <title>Network Design</title>
+      <link>https://kolmoblocks.github.io/documentation/network_design/</link>
+      <pubDate>Mon, 06 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://kolmoblocks.github.io/documentation/network_design/</guid>
+      <description>The KolmoLD Network is decentralized network storage of manifests and data chunks based on classic p2p networks design. There are two types of nodes in this network are can be present: boot nodes and data nodes (peers). Boot nodes are for peers discovering. Peers are storing pinned data chunks and manifests and gives access for all other peers to this data. Peers are forming a distributed hash table (DHT) for all data they stored.</description>
+    </item>
+    
+    <item>
+      <title>The Scripts</title>
+      <link>https://kolmoblocks.github.io/documentation/scripts/</link>
+      <pubDate>Mon, 06 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://kolmoblocks.github.io/documentation/scripts/</guid>
+      <description>This Java Script is part of the project and it allows to retrieve data from The KolmoLD Network by Manifest. These scripts are working in a web browser environment. It contains the following objects:
+ engine (cache, network, server) wasm manifest formula  The engine object is the entry point of the scripts. The life cycle of engine is equal to a parent application. Object engine contains other objects to implement network communications and caching.</description>
     </item>
     
     <item>
@@ -41,30 +61,6 @@ Manifest may contain:
       <guid>https://kolmoblocks.github.io/documentation/wasm/</guid>
       <description>One of the supported actors in Manifest is WebAssembly (WASM). To gain support as an actor in Kolmonet, WASM must support the special interface (listed below). The implemented sequence of calls is:
  For each argument:  Reserve memory for the argument name (_set_arg_name) Set to reserved memory name of the argument Get argument&amp;rsquo;s index (_get_arg_index) Reserve memory for the argument&amp;rsquo;s value (_set_arg) Set to reserved memory argument&amp;rsquo;s value  Execute WASM algorithm (_exec) Get result&amp;rsquo;s pointer and size (_get_result, _get_result_size) If any errors occur get error&amp;rsquo;s pointer and size to get an error message(_get_last_error, _get_last_error_size)  WASM interface (Rust):</description>
-    </item>
-    
-    <item>
-      <title>learning</title>
-      <link>https://kolmoblocks.github.io/documentation/learning_resources/</link>
-      <pubDate>Sun, 15 Jul 2018 18:02:42 -0400</pubDate>
-      
-      <guid>https://kolmoblocks.github.io/documentation/learning_resources/</guid>
-      <description>The list of (external) learning materials that people have found useful to learn more about the relevant technologies, to understand the kolmoblocks project, motivation and the context behind it, as well as its positioning within the industry.
-Feel free to propose additions by opening a PR with your changes. The Wikipedia definition pages and the official project&amp;rsquo;s websites might be ommitted as self-evident.
-Relevant information theory concepts  &amp;ldquo;Kolmogorov Complexity and Our Search for Meaning&amp;rdquo; by Noson S.</description>
-    </item>
-    
-    <item>
-      <title>whitepaper</title>
-      <link>https://kolmoblocks.github.io/documentation/whitepaper/</link>
-      <pubDate>Sun, 15 Jul 2018 18:02:42 -0400</pubDate>
-      
-      <guid>https://kolmoblocks.github.io/documentation/whitepaper/</guid>
-      <description>&lt;p&gt;Kolmogorov data blocks (or kolmoblocks) is a data block serialization format for content-
-addressable network protocols based on cryptohash naming scheme. Kolmoblocks can be thought
-of as scripts for a Turing-complete DSL that take other Merkle data blocks as an input and out-
-put the target data block. Its design assures block composability, deterministic reproducibility and
-eliminates the problem of serialization format versioning hell.&lt;/p&gt;</description>
     </item>
     
   </channel>

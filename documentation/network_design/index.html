@@ -13,10 +13,10 @@
 <title>
 
 
-     learning 
+     Network Design 
 
 </title>
-<link rel="canonical" href="https://kolmoblocks.github.io/documentation/learning_resources/">
+<link rel="canonical" href="https://kolmoblocks.github.io/documentation/network_design/">
 
 
 
@@ -105,9 +105,10 @@
         
         <div class="container hero  fade-in one " style="background-color: transparent; margin-top: 5em; margin-bottom: 5em">
             
-            <h1 class="tagline">  Learning resources</h1>
+            <h1 class="tagline">  Network Design</h1>
             <div class="post-data">
-                Dmitry Borzov | Jul 15, 2018 | 2 minutes read
+                Mikhail Ignatovich | Aug 6, 2018 | 1 minute
+                read
             </div>
         </div>
         
@@ -118,44 +119,13 @@
             <div class="container markdown  fade-in two  top-pad">
 
 
-                 
+                 <p>The KolmoLD Network is decentralized network storage of <a href="/documentation/manifest">manifests</a> and data chunks based on classic <a href="https://en.wikipedia.org/wiki/Peer-to-peer">p2p</a> networks design. There are two types of nodes in this network are can be present: boot nodes and data nodes (peers). Boot nodes are for peers discovering. Peers are storing pinned data chunks and manifests and gives access for all other peers to this data. Peers are forming a distributed hash table (DHT) for all data they stored.</p>
 
-<p>The list of (external) learning materials that people have found useful to learn more about the relevant technologies, to understand the kolmoblocks project, motivation and the context behind it, as well as its positioning within the industry.</p>
+<p>Each peer in the Network has a web interface with methods for storing and getting data. Implementation of storing and getting methods contains separate methods for manifests and data chunks. All data received for storing by the peer are stored locally in the database. These data are pinned data. Getting data algorithm is first search data in the local database, in case of absence data - search data in other peers by <a href="https://en.wikipedia.org/wiki/Kademlia">DHT mechanism</a>.</p>
 
-<p>Feel free to propose additions by opening a PR with your changes. The Wikipedia definition pages and the official project&rsquo;s websites might be ommitted as self-evident.</p>
+<p>The database of the peer is based on classic <a href="https://en.wikipedia.org/wiki/Key-value_database">key-value database</a>. The data chunks have keys are the result of a hash algorithm of itself. KolmoLD supports only <a href="https://en.wikipedia.org/wiki/SHA-2">SHA-256</a> hash algorithm. The manifest key is the value of <a href="/documentation/manifest/#doi">doi::SHA256</a> property from the manifest with a prefix. Storing manifests without this property is impossible.</p>
 
-<h2 id="relevant-information-theory-concepts">Relevant information theory concepts</h2>
-
-<ul>
-<li><a href="http://nautil.us/issue/63/horizons/kolmogorov-complexity-and-our-search-for-meaning">&ldquo;Kolmogorov Complexity and Our Search for Meaning&rdquo; by Noson S. Yanofsky</a> - a phylosophical take at the interpretation of the concept of Kolmogorov complexity</li>
-<li><a href="https://www.explainxkcd.com/wiki/index.php/1155:_Kolmogorov_Directions">ExplainXKCD #1155: Kolmogorov Directions</a> - an XKCD comic that can serve as a good illustration of what Kolmogorov complexity is<br /></li>
-</ul>
-
-<h2 id="vm-virtual-machine-concepts">VM (Virtual Machine) concepts</h2>
-
-<ul>
-<li>[skilldrick.github.io/easy6502/] - a tutorial where you build the NES chip&rsquo;s (6502) VM, serves as a great intro into VMs in general</li>
-<li><a href="https://thorstenball.com/#books">&ldquo;Writing an Interpreter in Go&rdquo; and &ldquo;Writing a Compiler in Go&rdquo; by Thorsten Ball</a> - amazing two books, perfect to actually get your hands dirty and build up an intuition around implementing compilers and VMs</li>
-</ul>
-
-<h2 id="distributed-systems">Distributed Systems</h2>
-
-<ul>
-<li><a href="https://dataintensive.net/">&ldquo;Designing Data-Intensive Applications&rdquo; by Martin Kleppmann</a> - this O&rsquo;Reilly book is an excellent overview of the best practices for building scalable distributed systems</li>
-</ul>
-
-<h2 id="network-protocols">Network protocols</h2>
-
-<ul>
-<li><a href="https://classroom.udacity.com/courses/ud436">Udacity&rsquo;s &ldquo;Computer Networking&rdquo; course</a> - is a perfect introduction into the basics behind the tech stack that makes the internet possible</li>
-</ul>
-
-<h2 id="webassembly">Webassembly</h2>
-
-<ul>
-<li><a href="https://rsms.me/wasm-intro">rsms.me/wasm-intro</a> - different from other hands-on intros to webasm in that it introduces the breakdown/&ldquo;anatomy&rdquo; of a wasm module right away (things like type section, import section and so on).<br /></li>
-<li><a href="https://hacks.mozilla.org/2018/10/webassemblys-post-mvp-future/">Webassembly&rsquo;s Future</a> - an overview blogpost on the roadmap for the subsequent direction of Webassembly project outside of the MVP version.</li>
-</ul>
+<p>To retrieve data from The KolmoLD Network use this <a href="/documentation/scripts">Java Script</a>.</p>
 
             </div>
 
@@ -184,7 +154,7 @@
 
     
     <script>
-        $('a[href^="https:\/\/kolmoblocks.github.io\/documentation\/learning_resources\/#"]').click(function (e) {
+        $('a[href^="https:\/\/kolmoblocks.github.io\/documentation\/network_design\/#"]').click(function (e) {
             e.preventDefault();
             var target = this.hash;
             $('html, body').animate({

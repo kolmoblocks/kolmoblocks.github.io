@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="description" content="HON Project">
+
+<title>
+
+
+     The Scripts 
+
+</title>
+<link rel="canonical" href="https://kolmoblocks.github.io/documentation/scripts/">
+
+
+
+
+
+
+<script type="text/javascript" src="/js/jquery-3.3.1.min.js"></script>
+
+
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/nunito_sans.css">
+<link rel="stylesheet" href="css/custom.css">
+
+
+    <link rel="stylesheet" href="/css/light-style.css">
+
+
+
+<link rel="stylesheet" href="/css/custom.css">
+
+
+<link rel="shortcut icon" href="/img/favicon.ico">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+<body>
+    <div class="section" id="top" style="padding-top: 2em">
+        <div class="container" style="top: opx;">
+                <style> 
+@media (max-width: 1000px) {
+  .nav-anchor {
+      display: none
+  }
+}
+.nav-menu {
+  position: relative; 
+  left: 10vw; 
+}
+.nav-item { 
+  margin-right: 2em;
+  top: 1vh;
+}
+.fa { 
+  color: #696969
+}
+  </style>
+
+<nav class="nav nav-center" style="background-color: transparent;">
+    <span id="nav-toggle" class="nav-toggle"  onclick="document.getElementById('nav-menu').classList.toggle('is-active');">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </span>
+    <div id="nav-menu" class="nav-left nav-menu" >
+      <span class="nav-item">
+        <i class="fa fa-home" aria-hidden="true"></i><a class="nav-anchor" href="/"> Home</a>
+      </span>
+      <span class="nav-item">
+        <i class="fa fa-book" aria-hidden="true"></i><a class="nav-anchor" href="/documentation"> Documentation</a>
+      </span>
+     
+      <span class="nav-item">
+        <i class="fa fa-superpowers" aria-hidden="true"></i> <a class="nav-anchor" href="/samples"> Live Examples</a>
+      </span>
+      <span class="nav-item">
+        <i class="fa fa-github"  aria-hidden="true"></i><a class="nav-anchor" href="https://github.com/kolmoblocks" > Github
+          </a>
+        </span>
+         </div>
+</nav>
+
+
+        </div>
+        
+    
+        
+        <div class="container hero  fade-in one " style="background-color: transparent; margin-top: 5em; margin-bottom: 5em">
+            
+            <h1 class="tagline">  The Scripts</h1>
+            <div class="post-data">
+                Mikhail Ignatovich | Aug 6, 2018 | 2 minutes read
+            </div>
+        </div>
+        
+
+        <div class="section  fade-in two ">
+
+
+            <div class="container markdown  fade-in two  top-pad">
+
+
+                 <p>This Java Script is part of the project and it allows to retrieve data from The KolmoLD Network by <a href="/documentation/manifest">Manifest</a>. These scripts are working in a web browser environment. It contains the following objects:</p>
+
+<ul>
+<li>engine (cache, network, server)</li>
+<li>wasm</li>
+<li>manifest</li>
+<li>formula</li>
+</ul>
+
+<p><em>The engine</em> object is the entry point of the scripts. The life cycle of <em>engine</em> is equal to a parent application. Object <em>engine</em> contains other objects to implement network communications and caching. Creating <em>engine</em> require mandatory options that must define network settings. Listed below code is show how to create <em>engine</em>. Address of dedicated server in options is the address of any peer node of <a href="/documentation/network_design">The KolmoLD Network</a>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#75715e">// Mandatory options to create engine
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">options</span> <span style="color:#f92672">=</span> {
+    <span style="color:#a6e22e">Network</span><span style="color:#f92672">:</span> {
+        <span style="color:#a6e22e">DedicatedServer</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;http://127.0.0.1:8080&#34;</span>
+    }
+};
+
+<span style="color:#75715e">// Creating engine with options
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">engine</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Engine</span>(<span style="color:#a6e22e">options</span>)
+</code></pre></div>
+<p>Class <em>wasm</em> is a wrapper to WebAssebbly actor. It allows executing WebAssembly algorithms according to <a href="/documentation/wasm">the specification</a>. Classes <em>manifest</em> and <em>formula</em> are represents entities of <a href="/documentation/manifest">the manifest</a>.</p>
+
+<p>To retrieve data from The KolmonetLD Network by manifest use <em>eval_manifest</em> method. Listed below code is show how to do it right.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#75715e">// Create manifest
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">manifest</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Manifest</span>(<span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">parse</span>(<span style="color:#e6db74">&#34;\&#34;doi\&#34;:{\&#34;SHA256\&#34;:\&#34;6F59B23AA0D0F7BEE8AEF463F1527FB025217095707B72D25F25C8AE62E58F6\&#34; }\&#34;&#34;</span>))
+
+<span style="color:#75715e">// Retrieve data by manifest
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">result</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">engine</span>.<span style="color:#a6e22e">eval_manifest</span>(<span style="color:#a6e22e">manifest</span>)
+
+<span style="color:#75715e">// Check operation result
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span> (<span style="color:#e6db74">&#34;ok&#34;</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">result</span>.<span style="color:#a6e22e">status</span>)
+{
+    <span style="color:#75715e">// Size of the retrieved data in bytes
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">size</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">result</span>.<span style="color:#a6e22e">data</span>[<span style="color:#e6db74">&#34;size&#34;</span>]
+
+    <span style="color:#75715e">// MIME of the retrieved data if defined in the manifest
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">MIME</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">result</span>.<span style="color:#a6e22e">data</span>[<span style="color:#e6db74">&#34;MIME&#34;</span>]
+
+    <span style="color:#75715e">// Retrieved data itself
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">data_from_kolmold</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">result</span>.<span style="color:#a6e22e">data</span>
+}
+<span style="color:#66d9ef">else</span>
+{
+    <span style="color:#75715e">// Something wrong happened
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">alert</span>(<span style="color:#a6e22e">result</span>.<span style="color:#a6e22e">status</span>)
+}
+</code></pre></div>
+<p>Here is the <a href="https://github.com/kolmoblocks/kolmonet/tree/master/scripts">link</a> to the git with scripts.</p>
+
+            </div>
+
+            <div class="disqus">
+                
+            </div>
+
+            <div class="container has-text-centered top-pad">
+                <hr>
+                
+                <hr>
+            </div>
+
+            <div class="section" id="footer">
+    <div class="container has-text-centered">
+        
+    </div>
+    <div class="container has-text-centered">
+    </div>
+</div>
+
+        </div>
+        
+    </div>
+    
+
+    
+    <script>
+        $('a[href^="https:\/\/kolmoblocks.github.io\/documentation\/scripts\/#"]').click(function (e) {
+            e.preventDefault();
+            var target = this.hash;
+            $('html, body').animate({
+                scrollTop: $(target).offset().top
+            }, 500);
+            return false;
+        })
+    </script>
+
+</body>

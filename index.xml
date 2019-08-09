@@ -22,6 +22,17 @@ In the KolmoLD framework, content is generated. The formula for generating this 
     </item>
     
     <item>
+      <title>learning</title>
+      <link>https://kolmoblocks.github.io/documentation/learning_resources/</link>
+      <pubDate>Sun, 15 Jul 2018 18:02:42 -0400</pubDate>
+      
+      <guid>https://kolmoblocks.github.io/documentation/learning_resources/</guid>
+      <description>The list of (external) learning materials that people have found useful to learn more about the relevant technologies, to understand the kolmoblocks project, motivation and the context behind it, as well as its positioning within the industry.
+Feel free to propose additions by opening a PR with your changes. The Wikipedia definition pages and the official project&amp;rsquo;s websites might be ommitted as self-evident.
+Relevant information theory concepts  &amp;ldquo;Kolmogorov Complexity and Our Search for Meaning&amp;rdquo; by Noson S.</description>
+    </item>
+    
+    <item>
       <title>Brotli Sample</title>
       <link>https://kolmoblocks.github.io/samples/brotli/</link>
       <pubDate>Wed, 17 Jul 2019 00:00:00 +0000</pubDate>
@@ -29,6 +40,37 @@ In the KolmoLD framework, content is generated. The formula for generating this 
       <guid>https://kolmoblocks.github.io/samples/brotli/</guid>
       <description>KolmoLD is a way to get the support of new data formats!
 KolmoLD manifests provides a way to distribute new data compression algorithms along the same channel as the compressed data. This means that a new codec that has not been installed as a browser add-on or an application upgrade is accessible client-side. Once the manifest defining the codec has been downloaded, it can be stored and re-used on all files that has been compressed with it.</description>
+    </item>
+    
+    <item>
+      <title>Network Design</title>
+      <link>https://kolmoblocks.github.io/documentation/network_design/</link>
+      <pubDate>Mon, 06 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://kolmoblocks.github.io/documentation/network_design/</guid>
+      <description>The KolmoLD Network is decentralized network storage of manifests and data chunks based on classic p2p networks design. There are two types of nodes in this network are can be present: boot nodes and data nodes (peers). Boot nodes are for peers discovering. Peers are storing pinned data chunks and manifests and gives access for all other peers to this data. Peers are forming a distributed hash table (DHT) for all data they stored.</description>
+    </item>
+    
+    <item>
+      <title>The Scripts</title>
+      <link>https://kolmoblocks.github.io/documentation/scripts/</link>
+      <pubDate>Mon, 06 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://kolmoblocks.github.io/documentation/scripts/</guid>
+      <description>This Java Script is part of the project and it allows to retrieve data from The KolmoLD Network by Manifest. These scripts are working in a web browser environment. It contains the following objects:
+ engine (cache, network, server) wasm manifest formula  The engine object is the entry point of the scripts. The life cycle of engine is equal to a parent application. Object engine contains other objects to implement network communications and caching.</description>
+    </item>
+    
+    <item>
+      <title>Manifest</title>
+      <link>https://kolmoblocks.github.io/documentation/manifest/</link>
+      <pubDate>Thu, 19 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://kolmoblocks.github.io/documentation/manifest/</guid>
+      <description>Manifest describe attributes and ways to reproduce resulting data. One of presentation form of The Manifest is JSON.
+Manifest may contain:
+ Properties Data Object Identifiers (DOI) Formulas Raw Value  Example 1 (manifest with one formula):
+{ &amp;#34;MIME&amp;#34;: &amp;#34;text/plain; charset=utf-8&amp;#34;, &amp;#34;size&amp;#34;: 202707, &amp;#34;doi&amp;#34;: { &amp;#34;SHA256&amp;#34;: &amp;#34;6F59B23AA0D0F7BEE8AEF463F1527FB025217095707B72D25F25C8AE62EA58F6&amp;#34; }, &amp;#34;formulas&amp;#34;: [ { &amp;#34;actor&amp;#34;: { &amp;#34;wasm&amp;#34;: { &amp;#34;doi&amp;#34;: { &amp;#34;SHA256&amp;#34;: &amp;#34;740F4421EBC579AFE1F4FB0F57C15E698B7BB525EA19E22B96634D49BB2147EE&amp;#34; } } }, &amp;#34;parameters&amp;#34;: { &amp;#34;arg1&amp;#34;: { &amp;#34;doi&amp;#34;: { &amp;#34;SHA256&amp;#34;: &amp;#34;ABCF598718AEAC83B850A6BF0773F3B8C3F8E43F33A05F4A571CFF5355DE58AE&amp;#34; } } } } ] } Example 2 (manifest with raw value):</description>
     </item>
     
     <item>
@@ -40,6 +82,16 @@ KolmoLD manifests provides a way to distribute new data compression algorithms a
       <description>KolmoLD is a way to describe data as a transformation for another data!
 A formula that transforms input data into something new can easily be implemented in the KolmoLD framework. The transformation formula is defined as an executable data object. In this example, it transforms plain text into upper case letters. A manifest defines the data objects that need to be transformed and outputs the results.
 { &#34;doi&#34;: { &#34;SHA256&#34;: &#34;</description>
+    </item>
+    
+    <item>
+      <title>WebAssembly</title>
+      <link>https://kolmoblocks.github.io/documentation/wasm/</link>
+      <pubDate>Thu, 19 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://kolmoblocks.github.io/documentation/wasm/</guid>
+      <description>One of the supported actors in Manifest is WebAssembly (WASM). To gain support as an actor in Kolmonet, WASM must support the special interface (listed below). The implemented sequence of calls is:
+ For each argument:  Reserve memory for the argument name (_set_arg_name) Set to reserved memory name of the argument Get argument&amp;rsquo;s index (_get_arg_index) Reserve memory for the argument&amp;rsquo;s value (_set_arg) Set to reserved memory argument&amp;rsquo;s value  Execute WASM algorithm (_exec) Get result&amp;rsquo;s pointer and size (_get_result, _get_result_size) If any errors occur get error&amp;rsquo;s pointer and size to get an error message(_get_last_error, _get_last_error_size)  WASM interface (Rust):</description>
     </item>
     
     <item>
@@ -87,64 +139,8 @@ This use case is about a dividing image to blocks and calculating the resulting 
       <pubDate>Thu, 19 Jul 2018 18:35:05 -0400</pubDate>
       
       <guid>https://kolmoblocks.github.io/about/</guid>
-      <description>In kolmoblocks, data chunks (or data blocks) are identified by their cryptographically strong hashes. For example, ”ABABABF”, an ASCII-serialized string, can be can identified by its SHA-256: CC6460622F8AFE1A4DC7A92E34D53709115B0E39CCC3F323A35FA5965DB006D6 (we will contactinate hashes in the examples to only the first 5 digits of its hex from here to keep it sane).
-Such a naming scheme provides you with the global address space of data, where data block&amp;rsquo;s id only depends on the data itself, not where it came from.</description>
-    </item>
-    
-    <item>
-      <title>KolmoLD</title>
-      <link>https://kolmoblocks.github.io/documentation/article/</link>
-      <pubDate>Thu, 19 Jul 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://kolmoblocks.github.io/documentation/article/</guid>
       <description>KolmoLD: Data Modeling for the Modern Internet ABSTRACT KolmoLD is a framework for content-addressable networking with a programmable layer: the data objects distributed across the network can contain program code to decode the data that is specified to be executed in a sandboxed environment and references other data objects based on a cryptographic hash function naming scheme.
 Traditionally, the algorithms to access given data are delivered via a channel that is separate from the one used to deliver the data itself, and usually involves installing custom software that could introduce security risks.</description>
-    </item>
-    
-    <item>
-      <title>Manifest</title>
-      <link>https://kolmoblocks.github.io/documentation/manifest/</link>
-      <pubDate>Thu, 19 Jul 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://kolmoblocks.github.io/documentation/manifest/</guid>
-      <description>Manifest describe attributes and ways to reproduce resulting data. One of presentation form of The Manifest is JSON.
-Manifest may contain:
- Properties Data Object Identifiers (DOI) Formulas Raw Value  Example 1 (manifest with one formula):
-{ &amp;#34;MIME&amp;#34;: &amp;#34;text/plain; charset=utf-8&amp;#34;, &amp;#34;size&amp;#34;: 202707, &amp;#34;doi&amp;#34;: { &amp;#34;SHA256&amp;#34;: &amp;#34;6F59B23AA0D0F7BEE8AEF463F1527FB025217095707B72D25F25C8AE62EA58F6&amp;#34; }, &amp;#34;formulas&amp;#34;: [ { &amp;#34;actor&amp;#34;: { &amp;#34;wasm&amp;#34;: { &amp;#34;doi&amp;#34;: { &amp;#34;SHA256&amp;#34;: &amp;#34;740F4421EBC579AFE1F4FB0F57C15E698B7BB525EA19E22B96634D49BB2147EE&amp;#34; } } }, &amp;#34;parameters&amp;#34;: { &amp;#34;arg1&amp;#34;: { &amp;#34;doi&amp;#34;: { &amp;#34;SHA256&amp;#34;: &amp;#34;ABCF598718AEAC83B850A6BF0773F3B8C3F8E43F33A05F4A571CFF5355DE58AE&amp;#34; } } } } ] } Example 2 (manifest with raw value):</description>
-    </item>
-    
-    <item>
-      <title>WebAssembly</title>
-      <link>https://kolmoblocks.github.io/documentation/wasm/</link>
-      <pubDate>Thu, 19 Jul 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://kolmoblocks.github.io/documentation/wasm/</guid>
-      <description>One of the supported actors in Manifest is WebAssembly (WASM). To gain support as an actor in Kolmonet, WASM must support the special interface (listed below). The implemented sequence of calls is:
- For each argument:  Reserve memory for the argument name (_set_arg_name) Set to reserved memory name of the argument Get argument&amp;rsquo;s index (_get_arg_index) Reserve memory for the argument&amp;rsquo;s value (_set_arg) Set to reserved memory argument&amp;rsquo;s value  Execute WASM algorithm (_exec) Get result&amp;rsquo;s pointer and size (_get_result, _get_result_size) If any errors occur get error&amp;rsquo;s pointer and size to get an error message(_get_last_error, _get_last_error_size)  WASM interface (Rust):</description>
-    </item>
-    
-    <item>
-      <title>learning</title>
-      <link>https://kolmoblocks.github.io/documentation/learning_resources/</link>
-      <pubDate>Sun, 15 Jul 2018 18:02:42 -0400</pubDate>
-      
-      <guid>https://kolmoblocks.github.io/documentation/learning_resources/</guid>
-      <description>The list of (external) learning materials that people have found useful to learn more about the relevant technologies, to understand the kolmoblocks project, motivation and the context behind it, as well as its positioning within the industry.
-Feel free to propose additions by opening a PR with your changes. The Wikipedia definition pages and the official project&amp;rsquo;s websites might be ommitted as self-evident.
-Relevant information theory concepts  &amp;ldquo;Kolmogorov Complexity and Our Search for Meaning&amp;rdquo; by Noson S.</description>
-    </item>
-    
-    <item>
-      <title>whitepaper</title>
-      <link>https://kolmoblocks.github.io/documentation/whitepaper/</link>
-      <pubDate>Sun, 15 Jul 2018 18:02:42 -0400</pubDate>
-      
-      <guid>https://kolmoblocks.github.io/documentation/whitepaper/</guid>
-      <description>&lt;p&gt;Kolmogorov data blocks (or kolmoblocks) is a data block serialization format for content-
-addressable network protocols based on cryptohash naming scheme. Kolmoblocks can be thought
-of as scripts for a Turing-complete DSL that take other Merkle data blocks as an input and out-
-put the target data block. Its design assures block composability, deterministic reproducibility and
-eliminates the problem of serialization format versioning hell.&lt;/p&gt;</description>
     </item>
     
   </channel>
