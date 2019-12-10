@@ -1,0 +1,58 @@
+{
+  "json": {
+    "MIME": "text/plain; charset=utf-8",
+    "size": 831,
+    "doi": {
+      "SHA256": "409895A3AAB6D7AA458B46550CF1AA0094FBCB5107A62BC4BAB6B11D073A6268"
+    },
+    "formulas": [
+      {
+        "actor": {
+          "jsglue": {
+            "doi": {
+              "SHA256": "1F4AC1370D24CBF58D62CC002D859AB7B52B507617C2D81996CB2CAF171533DD"
+            }
+          },
+          "wasm": {
+            "doi": {
+              "SHA256": "69B7A38156F7B5F5C57DFF70337EB95077695873023A08E1B718E434B1FBDCFF"
+            }
+          }
+        },
+        "parameters": {
+          "CompressedData": {
+            "doi": {
+              "SHA256": "592A8CAB5D05148A77CE67A26C7180A31730C22DBAEB16CC3D901DC92B8D0615"
+            }
+          }
+        }
+      },
+      {
+        "actor": {
+          "jsglue": {
+            "doi": {
+              "SHA256": "1F4AC1370D24CBF58D62CC002D859AB7B52B507617C2D81996CB2CAF171533DD"
+            }
+          },
+          "wasm": {
+            "doi": {
+              "SHA256": "69B7A38156F7B5F5C57DFF70337EB95077695873023A08E1B718E434B1FBDCFF"
+            }
+          }
+        },
+        "parameters": {
+          "CompressedData": {
+            "doi": {
+              "SHA256": "CBC6FAAFF889D7C3BE21334CD2D683DD9E2884AD1A26F79CE10C5DEDC822AC8F"
+            }
+          },
+          "Dictionary": {
+            "doi": {
+              "SHA256": "556ED6C94CCF93559BD1D7C4737B67BF73C1BFDEBF3A846FE462541814AEE452"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

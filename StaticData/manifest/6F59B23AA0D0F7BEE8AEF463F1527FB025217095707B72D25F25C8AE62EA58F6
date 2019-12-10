@@ -1,0 +1,25 @@
+{
+	"MIME": "text/plain; charset=utf-8",
+	"size": 202707,
+	"doi": {
+		"SHA256": "6F59B23AA0D0F7BEE8AEF463F1527FB025217095707B72D25F25C8AE62EA58F6"
+	},
+	"formulas": [
+		{
+			"actor": {
+				"wasm": {
+					"doi": {
+						"SHA256": "740F4421EBC579AFE1F4FB0F57C15E698B7BB525EA19E22B96634D49BB2147EE"
+					}
+				}
+			},
+			"parameters": {
+				"arg1": {
+					"doi": {
+						"SHA256": "ABCF598718AEAC83B850A6BF0773F3B8C3F8E43F33A05F4A571CFF5355DE58AE"
+					}
+				}
+			}
+		}
+	]
+}

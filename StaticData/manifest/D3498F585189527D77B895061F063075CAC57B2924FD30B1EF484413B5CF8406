@@ -1,0 +1,27 @@
+{
+  "json": {
+    "MIME": "BufImage/Grey32",
+    "size": 805208,
+    "doi": {
+      "SHA256": "D3498F585189527D77B895061F063075CAC57B2924FD30B1EF484413B5CF8406"
+    },
+    "formulas": [
+      {
+        "actor": {
+          "wasm": {
+            "doi": {
+              "SHA256": "402493E341FFF86A7EA33F47E053B4FB62FFB83BFB88F24FACFB4698AAA4B500"
+            }
+          }
+        },
+        "parameters": {
+          "arg1": {
+            "doi": {
+              "SHA256": "387126C669906546BF6B70CF3A1A8236EF446C8898FF3A22A810A99F45B59029"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

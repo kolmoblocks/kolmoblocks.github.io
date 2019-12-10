@@ -1,0 +1,35 @@
+{
+	"MIME": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+	"size": 7746718,
+	"doi": {
+		"SHA256": "05C62DEDE874781224CD154D29CBE87FEA2D2BE3A193DD155E6ED7E0820BE6CB"
+	},
+	"formulas": [
+		{
+			"actor": {
+				"jsglue_go": {
+					"doi": {
+						"SHA256": "71CB6AA4981CBB255D546D282BCF8CAE78A634C2016811C965B403E3A1627D72"
+					}
+				},
+				"wasm": {
+					"doi": {
+						"SHA256": "AEEFEA9D69E20317AEEE4F234DC01668A27A0C7B1C898895B752627F519BCFFA"
+					}
+				}
+			},
+			"parameters": {
+				"BSdiff": {
+					"doi": {
+						"SHA256": "35B4F7203128D900B0D76875F1D5E1F8A56E9E312F2A7DC0BD5A7C114D11750E"
+					}
+				},
+				"OfficeDocument": {
+					"doi": {
+						"SHA256": "2BB3DE761030BF744FF7389CCFD492D6A1418BC57B88E600C311D6360EDC9360"
+					}
+				}
+			}
+		}
+	]
+}
