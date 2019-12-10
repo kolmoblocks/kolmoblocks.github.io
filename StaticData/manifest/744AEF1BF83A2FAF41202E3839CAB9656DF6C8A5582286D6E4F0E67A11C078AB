@@ -1,32 +1,30 @@
 {
-  "json": {
-    "MIME": "BufImage/Grey32",
-    "size": 805208,
-    "doi": {
-      "SHA256": "744AEF1BF83A2FAF41202E3839CAB9656DF6C8A5582286D6E4F0E67A11C078AB"
-    },
-    "formulas": [
-      {
-        "actor": {
-          "wasm": {
-            "doi": {
-              "SHA256": "402493E341FFF86A7EA33F47E053B4FB62FFB83BFB88F24FACFB4698AAA4B500"
-            }
+  "MIME": "BufImage/Grey32",
+  "size": 805208,
+  "doi": {
+    "SHA256": "744AEF1BF83A2FAF41202E3839CAB9656DF6C8A5582286D6E4F0E67A11C078AB"
+  },
+  "formulas": [
+    {
+      "actor": {
+        "wasm": {
+          "doi": {
+            "SHA256": "402493E341FFF86A7EA33F47E053B4FB62FFB83BFB88F24FACFB4698AAA4B500"
+          }
+        }
+      },
+      "parameters": {
+        "arg1": {
+          "doi": {
+            "SHA256": "387126C669906546BF6B70CF3A1A8236EF446C8898FF3A22A810A99F45B59029"
           }
         },
-        "parameters": {
-          "arg1": {
-            "doi": {
-              "SHA256": "387126C669906546BF6B70CF3A1A8236EF446C8898FF3A22A810A99F45B59029"
-            }
-          },
-          "arg2": {
-            "doi": {
-              "SHA256": "57A3988068E5305D7392FEE11AC144B3BA410F1CFFC09F5861E998457AEB1E7A"
-            }
+        "arg2": {
+          "doi": {
+            "SHA256": "57A3988068E5305D7392FEE11AC144B3BA410F1CFFC09F5861E998457AEB1E7A"
           }
         }
       }
-    ]
-  }
+    }
+  ]
 }
