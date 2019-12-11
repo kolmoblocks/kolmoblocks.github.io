@@ -6,7 +6,7 @@
     <description>Recent content in Samples on Kolmoblocks: self-describing data encoding</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 17 Jul 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 01 Oct 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://kolmoblocks.github.io/samples/index.xml" rel="self" type="application/rss+xml" />
     
@@ -70,6 +70,16 @@ General-purpose lossless compression algorithms have served web developers well,
       <guid>https://kolmoblocks.github.io/samples/quality-variations/</guid>
       <description>KolmoLD is a way to get media data with quality variations!
 This use case is about a dividing image to blocks and calculating the resulting image on the client side according to traffic condition. For this example, the image was divided by frequencies after discrete fast Fourier transformation to blocks. Each block contains data with range of frequency. Low frequencies describe the main details of the image. Higher frequencies describe the precise details of the image.</description>
+    </item>
+    
+    <item>
+      <title>Version Control System</title>
+      <link>https://kolmoblocks.github.io/samples/version-control-system-/</link>
+      <pubDate>Tue, 01 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://kolmoblocks.github.io/samples/version-control-system-/</guid>
+      <description>Version Control System KolmoLD is a way to build version control systems!
+Using KolmoLD technology as a storage subsystem of the version control system allows reducing the amount of storing data. It could be possible by implementing type-specific program modules for optimal calculating differences between file versions and for reproducing original files from the calculated difference on the client-side. KolmoLD has the type-specific program module for docx, xlsx and pptx Microsoft Office 2007-2013 XML files.</description>
     </item>
     
   </channel>

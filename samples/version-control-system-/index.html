@@ -13,10 +13,10 @@
 <title>
 
 
-     Data Transformation 
+     Version Control System 
 
 </title>
-<link rel="canonical" href="https://kolmoblocks.github.io/samples/data-transformation/">
+<link rel="canonical" href="https://kolmoblocks.github.io/samples/version-control-system-/">
 
 
 
@@ -113,9 +113,9 @@ crossorigin="anonymous">
         
         <div class="container hero  fade-in one " style="background-color: transparent; margin-top: 5em; margin-bottom: 5em">
             
-            <h1 class="tagline">  Data Transformation</h1>
+            <h1 class="tagline">  Version Control System</h1>
             <div class="post-data">
-                Mikhail Ignatovich | Jul 17, 2019 | 1 minute
+                Mikhail Ignatovich | Oct 1, 2019 | 1 minute
                 read
             </div>
         </div>
@@ -128,28 +128,28 @@ crossorigin="anonymous">
             <div class="section  fade-in two ">
 
                 <div class="container markdown  fade-in two  top-pad" style="margin-auto">
-                     <p><b>KolmoLD is a way to describe data as a transformation for another data!</b></p>
+                     
 
-<p>A formula that transforms input data into something new can easily be implemented in the KolmoLD
-framework. The transformation formula is defined as an executable data object. In this example, it transforms
-plain text into upper case letters. A manifest defines the data objects that need to be transformed and outputs the results.</p>
+<h1 id="version-control-system">Version Control System</h1>
+
+<p><b>KolmoLD is a way to build version control systems!</b></p>
+
+<p>Using KolmoLD technology as a storage subsystem of the version control system allows reducing the amount of storing data. It could be possible by implementing type-specific program modules for optimal calculating differences between file versions and for reproducing original files from the calculated difference on the client-side.
+KolmoLD has the type-specific program module for docx, xlsx and pptx Microsoft Office 2007-2013 XML files. It based on the <a href="https://en.wikipedia.org/wiki/Delta_encoding">delta encoding algorithm</a> but applied in a more optimal way. It makes possible to reduce the size of the calculated difference <b>up to 40 times</b>.</p>
+
+<p><img src="/images/diffs table.jpg" alt="alt text" /></p>
+
+<p>Listed below example with pptx file.</p>
 
 <div class="interactive-canvas">
-<textarea class="manifest-text" id="sample_1_manifest_text" cols="100" rows="3">{ "doi": { "SHA256": "E41B63C496ACD3978DFA624F513AC6B88832E07083BC99B029E2961AE547CB41" } }</textarea>
+<textarea class="manifest-text" id="sample_1_manifest_text" cols="100" rows="5">{ "doi": { "SHA256": "05C62DEDE874781224CD154D29CBE87FEA2D2BE3A193DD155E6ED7E0820BE6CB" } }</textarea>
 <br>
 <span class="run-button-placeholder"></span>
 <span class="render-button-placeholder"></span>
 <span class="manifest-data-placeholder" id="sample_1_manifest_data"></span>
 </div>
 
-<p><b>Result data</b>
-    DOI=E41B63C496ACD3978DFA624F513AC6B88832E07083BC99B029E2961AE547CB41</p>
-
-<p><b>actor.wasm (Webassembly for upper case)</b>
-    DOI=8CF015555D8A4A3F077DD00960BFDF10260D51C0F298DC44A45AE8A7075FED35</p>
-
-<p><b>arg1 (Text file with &ldquo;big brother&rdquo;)</b>
-    DOI=6E459A96A65560FD0E4DA8E5FF58E7CED59BD685F068F6DBF23AEE158F2E091C</p>
+<p>First version of file is 2BB3DE761030BF744FF7389CCFD492D6A1418BC57B88E600C311D6360EDC9360, second version is 05C62DEDE874781224CD154D29CBE87FEA2D2BE3A193DD155E6ED7E0820BE6CB. The difference between versions calculated by KolmoLD 35B4F7203128D900B0D76875F1D5E1F8A56E9E312F2A7DC0BD5A7C114D11750E has size 20,184 bytes. If you calculate the difference between these versions by the standard way it will be 126,253 bytes. Calculated by KolmoLD difference is <b>6.25 times smaller</b>.</p>
 
                 </div>
 
@@ -185,7 +185,7 @@ plain text into upper case letters. A manifest defines the data objects that nee
     
     
     <script>
-        $('a[href^="https:\/\/kolmoblocks.github.io\/samples\/data-transformation\/#"]').click(function (e) {
+        $('a[href^="https:\/\/kolmoblocks.github.io\/samples\/version-control-system-\/#"]').click(function (e) {
             e.preventDefault();
             var target = this.hash;
             $('html, body').animate({
